@@ -30,21 +30,25 @@ public class Methods {
 	public static void drawBullsEye(double x, double y, double radius) {
 		StdDraw.setPenColor(StdDraw.BLACK);
 		StdDraw.filledCircle(x, y, radius);
+		
 
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
-
+        StdDraw.setPenColor(0,109, 219);
+        StdDraw.filledCircle(x, y, 3.0/4.0 * radius);
 		
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
-
+        StdDraw.setPenColor(146,0, 0);
+        StdDraw.filledCircle(x, y, 1.0/2.0 * radius);
 		
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
-
+        StdDraw.setPenColor(255,255, 109);
+        StdDraw.filledCircle(x, y, 1.0/4.0 * radius);
 		
 	}
 
@@ -62,8 +66,20 @@ public class Methods {
 	public static String substituteAll(String source, char target, String replacement) {
 		String result = "";
 		// TODO: Finish this method
-		
+		for (int i = 0; i < source.length(); i++)
+		{
+			if (source.charAt(i) == target)
+			{
+				result = result + replacement;
+			}
+			else
+			{
+				result = result + source.charAt(i);
+			}
+		}
 		return result;
+		
+		
 	}
 
 	/**
